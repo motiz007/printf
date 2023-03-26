@@ -1,7 +1,8 @@
 #ifndef MAIN_H
 #define MAIN_H
 
-
-int put_char(char c);
+int _printf(const char *format, ...);
+int _putchar(char c);
+void _puts(char *s);
 
 #endif
