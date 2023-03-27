@@ -10,30 +10,27 @@
 int _printf(const char *format, ...)
 {
 	int count = 0;
-	char c;
-	char *s;
-	va_list arg;
+	va_list args;
+	int (*function)(va_list) = NULL;
 
-	va_start(arg, format);
-	if (*format == '\0')
-		return (-1);
+	va_start(args, format);
 
 	while (*format)
 	{
 		if (*format == '%' && *(format + 1) != '%')
 		{
 			format++;
-			if (*format == 'c')
+			function = get_function(format);
+			if (*(format) == '\0')
+				return (-1);
+			else if (function == NULL)
 			{
-				c = (char)va_arg(arg, int);
-				_putchar(c);
-				count++;
+				_putchar(*(format - 1));
+				_putchar(*format);
+				count += 2;
 			}
-			else if (*format == 's')
-			{
-				s = va_arg(arg, char *);
-				count += _puts(s);
-			}
+			else
+				count += function(args);
 		}
 		else if (*format == '%' && *(format + 1) == '%')
 		{
@@ -46,8 +43,9 @@ int _printf(const char *format, ...)
 			_putchar(*format);
 			count++;
 		}
+
 		format++;
 	}
-	va_end(arg);
+	va_end(args);
 	return (count);
 }
