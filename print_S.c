@@ -3,7 +3,7 @@
 
 /**
  * print_S - prints a string & allows to display values that aren't ASCII
- * @S: string to print
+ * @args: string to print
  * Description: if out ASCII range print as \\x
  * Return: number of chars printed
  */
