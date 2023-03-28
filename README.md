@@ -47,25 +47,6 @@ int main(void)
 	return (0);
 }
 
-# Files:
-
-1. put_char.c - this contains the function to print out a character.
-2. main.h  - contains function prototypes.
-3. print_s.c - contains function to print out a string.
-4. __printf.c - contains function that prints output according to format specifiers.
-5. print_count.c - printing character count
-6. print_b.c - print binary numbers
-7. print_c.c -print character
-8. print_d.c - prints decimal numbers
-9. print_o.c - prints octal numbers 
-10. print_p.c - prints a pointer address in lower case
-11. print_rev.c - prints a string in reverse
-12. print_rot13.c - encodes and prints a string in rot-13
-13. print_u.c - prints unsigned integers
-14. print_x.c - converts and prints integer in hexadecimal
-15. get_func.c - determines which function to use
-16. print_X.c - converts and prints ineger in hexadcimal in uppercase
-17. print_S.c - prints a string and allows values that arent ASCII
 
 # Authors
-	_TENNIL KANGETHE and FRANCIS MOTOTO_
+	__TENNIL KANGETHE and FRANCIS MOTOTO__
